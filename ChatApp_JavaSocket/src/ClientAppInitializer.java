@@ -14,7 +14,7 @@ public class ClientAppInitializer extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        Parent load = FXMLLoader.load(getClass().getResource("com/PlayTechPvtLtd/LiveChatApplication/view/InboxManager.fxml"));
+        Parent load = FXMLLoader.load(getClass().getResource("com/PlayTechPvtLtd/LiveChatApplication/view/CreateNewAccount.fxml"));
         primaryStage.setTitle("DreedConnect");
         /*primaryStage.centerOnScreen();*/
         primaryStage.setScene(new Scene(load));
