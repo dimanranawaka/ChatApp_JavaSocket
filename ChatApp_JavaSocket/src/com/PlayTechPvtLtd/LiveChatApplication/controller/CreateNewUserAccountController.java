@@ -102,8 +102,30 @@ public class CreateNewUserAccountController {
     }
     /*Switching Anchor Panes code End*/
 
+    /****************************/
+
+    /*User Login Controller Code Start*/
     public void login(ActionEvent actionEvent) {
+        username = userName.getText();
+        password = passWord.getText();
+        boolean login = false;
+        for (User x : users) {
+            if (x.name.equalsIgnoreCase(username) && x.password.equalsIgnoreCase(password)) {
+                login = true;
+                loggedInUser.add(x);
+                System.out.println(x.name);
+                gender = x.gender;
+                break;
+            }
+        }
+        if (login) {
+            changeWindow();
+        } else {
+            loginNotifier.setOpacity(1);
+        }
     }
+    /*User Login Controller Code Start*/
+    public void changeWindow(){}
     /*Set Opacity Code Start*/
     private void setOpacity(Label a, Label b, Label c, Label d) {
         if(a.getOpacity() == 1 || b.getOpacity() == 1 || c.getOpacity() == 1 || d.getOpacity() == 1) {
