@@ -114,9 +114,9 @@ public class InboxManagerController extends Thread implements Initializable {
         showProPic.setStroke(Color.valueOf("#90a4ae"));
         Image image;
         if(CreateNewUserAccountController.gender.equalsIgnoreCase("Male")) {
-            image = new Image("icons/user.png", false);
+            image = new Image("/com/PlayTechPvtLtd/LiveChatApplication/view/assets/icons/user.png", false);
         } else {
-            image = new Image("icons/female.png", false);
+            image = new Image("/com/PlayTechPvtLtd/LiveChatApplication/view/assets/icons/female.png", false);
             proImage.setImage(image);
         }
         showProPic.setFill(new ImagePattern(image));
