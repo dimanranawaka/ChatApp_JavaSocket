@@ -3,11 +3,16 @@ package com.PlayTechPvtLtd.LiveChatApplication.controller;
 import animatefx.animation.FadeIn;
 import com.PlayTechPvtLtd.LiveChatApplication.model.User;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class CreateNewUserAccountController {
@@ -124,8 +129,29 @@ public class CreateNewUserAccountController {
             loginNotifier.setOpacity(1);
         }
     }
-    /*User Login Controller Code Start*/
-    public void changeWindow(){}
+    /*User Login Controller Code End*/
+
+    /****************************/
+
+    /*Change Window Code Start*/
+    public void changeWindow(){
+        try {
+            Stage stage = (Stage) userName.getScene().getWindow();
+            Parent load = FXMLLoader.load(this.getClass().getResource("/com/PlayTechPvtLtd/LiveChatApplication/view/InboxManager.fxml"));
+            stage.setScene(new Scene(load,330,560));
+            stage.setTitle(username + "");
+            stage.setOnCloseRequest(event -> {
+                System.exit(0);
+            });
+
+        }catch (IOException exception){
+            exception.printStackTrace();
+        }
+    }
+    /*Change Window Code End*/
+
+    /****************************/
+
     /*Set Opacity Code Start*/
     private void setOpacity(Label a, Label b, Label c, Label d) {
         if(a.getOpacity() == 1 || b.getOpacity() == 1 || c.getOpacity() == 1 || d.getOpacity() == 1) {
