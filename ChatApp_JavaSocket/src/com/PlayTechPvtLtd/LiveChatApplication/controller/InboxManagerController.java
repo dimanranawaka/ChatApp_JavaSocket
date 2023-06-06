@@ -127,6 +127,16 @@ public class InboxManagerController extends Thread implements Initializable {
     }
     public boolean saveControl = false;
     public void imageBtnOnAction(MouseEvent mouseEvent) {
+        try {
+            Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setTitle("Open Image");
+            this.filePath = fileChooser.showOpenDialog(stage);
+            writer.println(clientName.getText() + " " + "img" + filePath.getPath());
+            writer.flush();
+        } catch (NullPointerException e) {
+            System.out.println("Image is not Selected!");
+        }
     }
 
     public void emojiBtnOnAction(MouseEvent mouseEvent) {
