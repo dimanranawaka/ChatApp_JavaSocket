@@ -42,9 +42,21 @@ public class CreateNewUserAccountController {
     public static ArrayList<User> loggedInUser = new ArrayList<>();
     public static ArrayList<User> users = new ArrayList<User>();
 
-    public void handleMouseEvent(MouseEvent mouseEvent) {
 
+     /*SignIn account  SignUp account to back button controller Code Start*/
+    public void handleMouseEvent(MouseEvent mouseEvent) {
+        if(mouseEvent.getSource() == btnBack){
+            new FadeIn(pnSignIn).play();
+            pnSignIn.toFront();
+        }
+        regEmail.setText("");
+        regPass.setText("");
+        regName.setText("");
     }
+    /*SignIn account  SignUp account to back button controller Code Start*/
+
+    /****************************/
+
     /*Registration Code Start*/
     public void registration(ActionEvent actionEvent) {
         if (!regName.getText().equalsIgnoreCase("")
