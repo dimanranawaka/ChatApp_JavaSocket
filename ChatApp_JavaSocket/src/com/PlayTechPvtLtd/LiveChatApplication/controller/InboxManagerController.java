@@ -2,9 +2,11 @@ package com.PlayTechPvtLtd.LiveChatApplication.controller;
 
 import animatefx.animation.FadeIn;
 import com.PlayTechPvtLtd.LiveChatApplication.model.User;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.geometry.NodeOrientation;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
@@ -18,7 +20,10 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
 import java.io.*;
 import java.net.Socket;
 import java.net.URL;
@@ -62,6 +67,34 @@ public class InboxManagerController extends Thread implements Initializable {
         }
     }
 
+    @Override
+    public void run() {
+        try {
+            while (true) {
+                String msg = reader.readLine();
+                String[] tokens = msg.split(" ");
+                String cmd = tokens[0];
+                System.out.println(cmd);
+                StringBuilder fulmsg = new StringBuilder();
+                for(int i = 1; i < tokens.length; i++) {
+                    fulmsg.append(tokens[i]);
+                }
+                System.out.println(fulmsg);
+                if (cmd.equalsIgnoreCase(CreateNewUserAccountController.username + ":")) {
+                    continue;
+                } else if(fulmsg.toString().equalsIgnoreCase("bye")) {
+                    break;
+                }
+                msgRoom.appendText(msg + "\n");
+            }
+            reader.close();
+            writer.close();
+            socket.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public void handleProfileBtn(ActionEvent actionEvent) {
         if(actionEvent.getSource().equals(profileBtn) && !toggleProfile){
             new FadeIn(profile).play();
@@ -92,6 +125,7 @@ public class InboxManagerController extends Thread implements Initializable {
             }
         }
     }
+    public boolean saveControl = false;
     public void imageBtnOnAction(MouseEvent mouseEvent) {
     }
 
@@ -99,6 +133,9 @@ public class InboxManagerController extends Thread implements Initializable {
     }
 
     public void sendMessageByKey(KeyEvent keyEvent) {
+        if (keyEvent.getCode().toString().equals("ENTER")) {
+            send();
+        }
     }
 
     public void handleSendEvent(MouseEvent mouseEvent) {
@@ -118,9 +155,27 @@ public class InboxManagerController extends Thread implements Initializable {
         }
     }
     public void saveImage(ActionEvent actionEvent) {
+        if (saveControl) {
+            try {
+                BufferedImage bufferedImage = ImageIO.read(filePath);
+                Image image = SwingFXUtils.toFXImage(bufferedImage, null);
+                proImage.setImage(image);
+                showProPic.setFill(new ImagePattern(image));
+                saveControl = false;
+                fileChoosePath.setText("");
+            } catch (IOException e) {
+                System.err.println(e.getMessage());
+            }
+        }
     }
 
     public void chooseImageButton(ActionEvent actionEvent) {
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        fileChooser = new FileChooser();
+        fileChooser.setTitle("Open Image");
+        this.filePath = fileChooser.showOpenDialog(stage);
+        fileChoosePath.setText(filePath.getPath());
+        saveControl = true;
     }
 
     @Override
