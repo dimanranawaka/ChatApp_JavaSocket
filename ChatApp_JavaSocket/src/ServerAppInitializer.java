@@ -1,14 +1,28 @@
-import javafx.application.Application;
-import javafx.stage.Stage;
+import com.PlayTechPvtLtd.LiveChatApplication.controller.ClientHandler;
 
-public class ServerAppInitializer extends Application {
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.ArrayList;
+
+public class ServerAppInitializer {
+    private static final ArrayList<ClientHandler> clients = new ArrayList<>();
 
     public static void main(String[] args) {
-        launch(args);
-    }
-
-    @Override
-    public void start(Stage primaryStage) {
-
+        ServerSocket serverSocket;
+        Socket socket;
+        try {
+            serverSocket = new ServerSocket(8000);
+            while (true) {
+                System.out.println("Waiting for clients...");
+                socket = serverSocket.accept();
+                System.out.println("Connected");
+                ClientHandler clientThread = new ClientHandler(socket, clients);
+                clients.add(clientThread);
+                clientThread.start();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
