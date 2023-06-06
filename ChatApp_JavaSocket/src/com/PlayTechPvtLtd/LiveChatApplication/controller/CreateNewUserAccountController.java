@@ -7,27 +7,27 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 
 public class CreateNewUserAccountController {
-    public Button btnSignUp;
-    public PasswordField passWord;
-    public TextField userName;
-    public TextField regPhoneNo;
-    public Label checkEmail;
-    public Label nameExists;
-    public RadioButton female;
-    public ToggleGroup Gender;
-    public RadioButton male;
-    public TextField regName;
-    public Label goBack;
-    public Label success;
-    public Label controlRegLabel;
-    public Button getStarted;
-    public TextField regEmail;
-    public TextField regFirstName;
-    public PasswordField regPass;
-    public ImageView btnBack;
     public Pane pnSignUp;
-    public Label loginNotifier;
+    public ImageView btnBack;
+    public PasswordField regPass;
+    public TextField regFirstName;
+    public TextField regEmail;
+    public Button getStarted;
+    public Label controlRegLabel;
+    public Label success;
+    public Label goBack;
+    public TextField regName;
+    public RadioButton male;
+    public ToggleGroup Gender;
+    public RadioButton female;
+    public Label nameExists;
+    public Label checkEmail;
+    public TextField regPhoneNo;
     public Pane pnSignIn;
+    public TextField userName;
+    public PasswordField passWord;
+    public Button btnSignUp;
+    public Label loginNotifier;
 
     public void handleMouseEvent(MouseEvent mouseEvent) {
     }

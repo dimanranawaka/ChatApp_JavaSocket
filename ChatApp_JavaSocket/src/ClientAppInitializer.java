@@ -17,7 +17,7 @@ public class ClientAppInitializer extends Application {
         Parent load = FXMLLoader.load(getClass().getResource("com/PlayTechPvtLtd/LiveChatApplication/view/CreateNewAccount.fxml"));
         primaryStage.setTitle("DreedConnect");
         /*primaryStage.centerOnScreen();*/
-        primaryStage.setScene(new Scene(load));
+        primaryStage.setScene(new Scene(load, 330, 560));
         primaryStage.setResizable(false);
         primaryStage.show();
     }
