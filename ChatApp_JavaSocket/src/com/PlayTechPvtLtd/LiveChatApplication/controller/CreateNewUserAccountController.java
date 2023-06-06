@@ -1,5 +1,6 @@
 package com.PlayTechPvtLtd.LiveChatApplication.controller;
 
+import animatefx.animation.FadeIn;
 import com.PlayTechPvtLtd.LiveChatApplication.model.User;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
@@ -84,8 +85,22 @@ public class CreateNewUserAccountController {
         }
     }
     /*Registration Code End*/
+
+    /*Switching Anchor Panes code Start*/
     public void handleButtonAction(ActionEvent actionEvent) {
+        if(actionEvent.getSource().equals(btnSignUp)){
+            new FadeIn(pnSignUp).play();
+            pnSignUp.toFront();
+        }
+        if (actionEvent.getSource().equals(getStarted)){
+            new FadeIn(pnSignIn).play();
+            pnSignIn.toFront();
+        }
+        loginNotifier.setOpacity(0);
+        userName.setText("");
+        passWord.setText("");
     }
+    /*Switching Anchor Panes code End*/
 
     public void login(ActionEvent actionEvent) {
     }
