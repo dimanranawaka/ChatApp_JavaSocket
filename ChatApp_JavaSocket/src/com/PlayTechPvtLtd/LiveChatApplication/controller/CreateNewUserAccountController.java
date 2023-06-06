@@ -104,6 +104,7 @@ public class CreateNewUserAccountController {
 
     public void login(ActionEvent actionEvent) {
     }
+    /*Set Opacity Code Start*/
     private void setOpacity(Label a, Label b, Label c, Label d) {
         if(a.getOpacity() == 1 || b.getOpacity() == 1 || c.getOpacity() == 1 || d.getOpacity() == 1) {
             a.setOpacity(0);
@@ -117,6 +118,11 @@ public class CreateNewUserAccountController {
         checkEmail.setOpacity(0);
         nameExists.setOpacity(0);
     }
+    /*Set Opacity Code End*/
+
+    /****************************/
+
+    /*Check User Code Start*/
     private boolean checkUser(String username) {
         for(User user : users) {
             if(user.name.equalsIgnoreCase(username)) {
@@ -125,7 +131,11 @@ public class CreateNewUserAccountController {
         }
         return true;
     }
+    /*Check User Code End*/
 
+    /****************************/
+
+    /*Check Mail Code Start*/
     private boolean checkEmail(String email) {
         for(User user : users) {
             if(user.email.equalsIgnoreCase(email)) {
@@ -134,6 +144,11 @@ public class CreateNewUserAccountController {
         }
         return true;
     }
+    /*Check Mail Code Start*/
+
+    /****************************/
+
+    /*Make Default Code Start*/
     private void makeDefault() {
         regName.setText("");
         regPass.setText("");
@@ -143,4 +158,5 @@ public class CreateNewUserAccountController {
         male.setSelected(true);
         setOpacity(controlRegLabel, checkEmail, nameExists);
     }
+    /*Make Default Code Start*/
 }
