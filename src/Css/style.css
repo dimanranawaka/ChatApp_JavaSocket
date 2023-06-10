@@ -1,0 +1,126 @@
+/* Increase opacity on hover for btnBack */
+.btnBack:hover {
+    -fx-opacity: 1;
+}
+
+/* Styling for btnLogin */
+.btnLogin {
+    -fx-background-color: #1f2933; /* Set background color for btnLogin */
+}
+
+/* Hover effect for btnLogin */
+.btnLogin:hover {
+    -fx-background-color: #2d3a41 !important; /* Change background color on hover (important to override other rules) */
+    -fx-text-fill: #4db6ac; /* Set text fill color on hover */
+}
+
+/* Styling for allButton */
+.allButton {
+    -fx-background-color:  #455a64; /* Set background color for allButton */
+    -fx-background-radius: 90; /* Set background radius for allButton */
+}
+
+/* Hover effect for allButton */
+.allButton:hover {
+    -fx-background-color: #546e7a; /* Change background color on hover */
+    -fx-text-fill: #f4f4f4; /* Set text fill color on hover */
+}
+
+/* Styling for txtFont */
+.txtFont {
+    -fx-text-fill: #f4f4f4; /* Set text fill color for txtFont */
+}
+
+/* Styling for focused state of txtFont */
+.txtFont:focused {
+    -fx-border-color: transparent transparent #558b2f transparent; /* Set border color when focused */
+    -fx-text-fill: #f4f4f4; /* Set text fill color when focused */
+}
+
+/* Styling for scroll-pane */
+.scroll-pane {
+    -fx-background-color: transparent; /* Set transparent background color for scroll-pane */
+    -fx-border-color: #37474f; /* Set border color for scroll-pane */
+    -fx-padding: 0px; /* Set padding for scroll-pane */
+}
+
+/* Styling for vertical scroll bar in scroll-pane */
+.scroll-pane .scroll-bar:vertical {
+    -fx-background-color: transparent; /* Set transparent background color for vertical scroll bar */
+    -fx-background-radius: 0; /* Set background radius for vertical scroll bar */
+}
+
+/* Styling for track of vertical scroll bar in scroll-pane */
+.scroll-pane .scroll-bar:vertical .track {
+    -fx-background-color: transparent; /* Set transparent background color for vertical scroll bar track */
+    -fx-border-color: transparent; /* Set transparent border color for vertical scroll bar track */
+    -fx-background-radius: 0em; /* Set background radius for vertical scroll bar track */
+    -fx-border-radius: 2em; /* Set border radius for vertical scroll bar track */
+}
+
+/* Styling for decrement button of horizontal scroll bar in scroll-pane */
+.scroll-pane .scroll-bar:horizontal .decrement-button {
+    -fx-background-color: transparent; /* Set transparent background color for horizontal decrement button */
+    -fx-background-radius: 0em; /* Set background radius for horizontal decrement button */
+    -fx-padding: 0 0 10 0; /* Set padding for horizontal decrement button */
+}
+
+/* Styling for decrement button of vertical scroll bar in scroll-pane */
+.scroll-pane .scroll-bar:vertical .decrement-button {
+    -fx-background-color: transparent; /* Set transparent background color for vertical decrement button */
+    -fx-background-radius: 0em; /* Set background radius for vertical decrement button */
+    -fx-padding: 0 10 0 0; /* Set padding for vertical decrement button */
+}
+
+/* Styling for scroll bar arrows */
+.scroll-pane .scroll-bar .increment-arrow,
+.scroll-pane .scroll-bar .decrement-arrow {
+    -fx-padding: -2; /* Set padding for scroll bar arrows */
+}
+
+/* Styling for thumb of vertical scroll bar in scroll-pane */
+.scroll-pane .scroll-bar:vertical .thumb {
+    -fx-background-color: #78909c; /* Set background color for vertical scroll bar thumb */
+    -fx-background-insets: 2, 0, 0; /* Set background insets for vertical scroll bar thumb */
+    -fx-background-radius: 2em; /* Set background radius for vertical scroll bar thumb */
+}
+
+/* Styling for text area */
+.text-area {
+    -fx-font-family: Arial, sans-serif; /* Set font family for text area */
+    -fx-highlight-fill: #ffff; /* Set highlight fill color for text area */
+    -fx-highlight-text-fill: #fff; /* Set highlight text fill color for text area */
+    -fx-text-fill: #ffff; /* Set text fill color for text area */
+    -fx-border-color: #000; /* Set border color for text area */
+    -fx-background-insets: 0; /* Set background insets for text area */
+    -fx-background-color: transparent, #37474f, transparent, #37474f; /* Set background color for text area */
+}
+
+/* Styling for content of text area */
+.text-area .content {
+    -fx-background-color: transparent, #263238; /* Set background color for text area content */
+}
+
+/* Styling for text field */
+.textField {
+    -fx-text-fill: #eeeeee; /* Set text fill color for text field */
+    -fx-font-family: Arial !important; /* Set font family for text field (important to override other rules) */
+}
+
+/* Styling for msgBox */
+.msgBox {
+    -fx-background-color: #37474f; /* Set background color for msgBox */
+    -fx-background-radius: 70; /* Set background radius for msgBox */
+    -fx-font-size: 15px; /* Set font size for msgBox */
+    -fx-text-fill: #eeeeee; /* Set text fill color for msgBox */
+    -fx-font-family: Arial !important; /* Set font family for msgBox (important to override other rules) */
+}
+
+/*
+    Button Font color: #004c40
+    Button Background Color: #455a64
+    All Button Hover Color: #546e7a
+    Body Color: #263238
+    Text field color:  #455a64
+    Header color: #102027
+ */
